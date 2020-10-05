@@ -1,3 +1,4 @@
+// swift-tools-version:5.3
 //
 //  LeftPad-String.swift
 //  LeftPad
@@ -17,7 +18,7 @@ public extension String {
     public func leftPad(toWidth width: Int) -> String {
         return leftPad(toWidth: width, withString: defaultPaddingString)
     }
-	
+
 }
 
 public extension String {
@@ -25,17 +26,17 @@ public extension String {
     public func leftPad(toWidth width: Int, withString string: String?) -> String {
         let paddingString = string ?? defaultPaddingString
 
-        if self.characters.count >= width {
+        if self.count >= width {
             return self
         }
 
-        let remainingLength: Int = width - self.characters.count
+        let remainingLength: Int = width - self.count
         var padString = String()
         for _ in 0 ..< remainingLength {
             padString += paddingString
         }
 
-        return [padString, self].joinWithSeparator("")
+        return [padString, self].join(separator: "")
     }
 
 }

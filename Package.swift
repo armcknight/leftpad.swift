@@ -1,3 +1,4 @@
+// swift-tools-version:5.3
 //
 //  Package.swift
 //  LeftPad
@@ -11,6 +12,6 @@ import PackageDescription
 let package = Package(
     name:  "LeftPad",
     dependencies: [
-        .Package(url: "https://github.com/armcknight/truncate.swift.git", majorVersion: 1)
+        .package(name: "leftpad", url: "https://github.com/armcknight/truncate.swift.git", .exact("1.0.0"))
     ]
 )
